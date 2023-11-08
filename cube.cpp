@@ -176,7 +176,7 @@ void mixCube(char** top, char** sides, char** bot, int iter) {
 		else
 			type[2] = random == 0 ? 'l' : 'r';
 		makeMove(top, sides, bot, type);
-		std::cout << type[0] << type[1] << type[2] << std::endl;
+		//std::cout << type[0] << type[1] << type[2] << std::endl;
 	}
 }
 int main() {
