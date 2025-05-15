@@ -1,6 +1,22 @@
 #include <iostream>
 #include <random>
 
+void initializeCube(char** top, char** bot, char** sides) {
+    for (int i = 0; i < 3; i++) {
+        top[i] = new char[3];
+        bot[i] = new char[3];
+        sides[i] = new char[12];
+
+        for (int j = 0; j < 3; j++) {
+            top[i][j]      = 'w';
+            bot[i][j]      = 'y';
+            sides[i][j]        = 'r';
+            sides[i][j + 3]    = 'b';
+            sides[i][j + 6]    = 'o';
+            sides[i][j + 9]    = 'g';
+        }
+    }
+}
 void printMat(char** matrix,int size) {
 	for (int i = 0; i < 3; i++)	{
 		for (int j = 0; j < size; j++)	{
@@ -179,37 +195,68 @@ void mixCube(char** top, char** sides, char** bot, int iter) {
 		//std::cout << type[0] << type[1] << type[2] << std::endl;
 	}
 }
-int main() {
-	char** top = new char* [3];
-	char** bot = new char* [3];
-	char** sides = new char* [12];
-	bool win = false;
-	for (int i = 0; i < 3; i++) {
-		top[i] = new char[3];
-		bot[i] = new char[3];
-		sides[i] = new char[12];
-		for (int j = 0; j < 3; j++) {
-			top[i][j] = 'w';
-			bot[i][j] = 'y';
-			sides[i][j] = 'r';
-			sides[i][j + 3] = 'b';
-			sides[i][j + 6] = 'o';
-			sides[i][j + 9] = 'g';
-		}
-	}
-	int iterations = 20;
-	mixCube(top, sides, bot, iterations);
-	while (!win) {
-		char* type=new char[3];
+char* solver_nextMove(){
+	char* type=new char[3];
+	// Steps (Idea)
+		// 1 - Select random color to start
+		// 2 - Complete a face
+		// 3 - Complete 2nd row for all sides
+		// 4 - Obtain desired shape on top side
+		// 5 - Get center of each top side to be on the right color
+		// 6 - Rotate corner pieces until they colors coincide.
+		// 7 - Fix each corner
+		// SOLVEEED
+	return type;
+}
 
-		printCube(top, sides, bot);
-		std::cout << "Move column (c+number+up/down) ex: c2u or Move row (r+number+right/left) ex: r1l";
-		std::cout << std::endl;
-		std::cout << "Move Cube m+right(r)left(l)up(u)down(d) ex: mr";
-		std::cout<<std::endl;
-		std::cin >> type;
-		makeMove(top,sides,bot,type);
-		win = gameOver(top, sides, bot);
+int main() {
+// Cube face representations (3x3 arrays for each face)
+char** top = new char*[3];     // Top face of the cube
+char** bot = new char*[3];     // Bottom face of the cube
+char** sides = new char*[12];  // Side faces of the cube (4 sides x 3 rows)
+// Game state
+bool win = false;  // Flag indicating whether the cube is solved
+// Solver mode options
+enum SolverMode {
+    USER = 0, // Manual solving by the user
+    AUTO = 1  // Automatic solving by the program
+};
+// === Editable Parameters ===
+// Number of random moves to scramble the cube at the start
+int mixing = 2;
+// Select the solving mode: USER for manual, AUTO for automatic solver
+SolverMode solver = USER;
+
+	initializeCube(top, bot, sides);
+
+	mixCube(top, sides, bot, mixing);
+
+	switch (solver)
+	{
+	case USER:
+		while (!win) {
+			char* type=new char[3];
+			printCube(top, sides, bot);
+			std::cout << "Move column (c+number+up/down) ex: c2u or Move row (r+number+right/left) ex: r1l";
+			std::cout << std::endl;
+			std::cout << "Move Cube m+right(r)left(l)up(u)down(d) ex: mr";
+			std::cout<<std::endl;
+			std::cin >> type;
+			makeMove(top,sides,bot,type);
+			win = gameOver(top, sides, bot);
+		}
+		break;
+	case AUTO:
+		while (!win) {
+			char* type=new char[3];
+			printCube(top, sides, bot);
+			type = solver_nextMove();
+			makeMove(top,sides,bot,type);
+			win = gameOver(top, sides, bot);
+		}
+		break;
+	default:
+		break;
 	}
 	return 0;
 }
