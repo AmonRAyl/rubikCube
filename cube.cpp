@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include <cstring>
 
 void initializeCube(char** top, char** bot, char** sides) {
     for (int i = 0; i < 3; i++) {
@@ -195,18 +196,47 @@ void mixCube(char** top, char** sides, char** bot, int iter) {
 		//std::cout << type[0] << type[1] << type[2] << std::endl;
 	}
 }
-char* solver_nextMove(){
-	char* type=new char[3];
+char* solver_nextMove(char** top, char** sides, char** bot,int& step){
+	int i = 1;
 	// Steps (Idea)
+	switch (step)
+		{
 		// 1 - Select random color to start
+		// We will select the center color of the top face
+		// For simplicity we will start by solving the cube in a specific way, where we always start
+		// with white at the top yellow bottom, red blue orange green
+		// 1.1 Place middle white on top position
+		case 0:
+		// 1.1 Place middle white on top position
+		if (top[1][1]!='w') { 
+			if (bot[1][1]=='w')
+				return strcpy(new char[3], "mu");
+			if (sides[0][1]=='w'){
+				step++;
+				return strcpy(new char[3], "mu");
+			}
+			while (true) {
+				if (sides[1][1+(3*i)]=='w')
+					return strcpy(new char[3], "ml");
+				i++;
+			}
+		}else{
+			step++;
+		}
+		case 1:
+		// Strategy to solve first face of the cube . . .
+		default:
+			break;
+		}
+
 		// 2 - Complete a face
+		// In order to acomplish this we will start with the top, making a cross first
 		// 3 - Complete 2nd row for all sides
 		// 4 - Obtain desired shape on top side
 		// 5 - Get center of each top side to be on the right color
 		// 6 - Rotate corner pieces until they colors coincide.
 		// 7 - Fix each corner
 		// SOLVEEED
-	return type;
 }
 
 int main() {
@@ -221,15 +251,19 @@ enum SolverMode {
     USER = 0, // Manual solving by the user
     AUTO = 1  // Automatic solving by the program
 };
+int step = 0; // Current step of the solver
 // === Editable Parameters ===
 // Number of random moves to scramble the cube at the start
 int mixing = 2;
 // Select the solving mode: USER for manual, AUTO for automatic solver
-SolverMode solver = USER;
+SolverMode solver = AUTO;
 
 	initializeCube(top, bot, sides);
 
 	mixCube(top, sides, bot, mixing);
+	// Hardcoded moves to test stuff
+	makeMove(top,sides,bot,(char*)"mu");
+	printCube(top, sides, bot);
 
 	switch (solver)
 	{
@@ -250,9 +284,10 @@ SolverMode solver = USER;
 		while (!win) {
 			char* type=new char[3];
 			printCube(top, sides, bot);
-			type = solver_nextMove();
+			type = solver_nextMove(top,sides,bot,step);
 			makeMove(top,sides,bot,type);
 			win = gameOver(top, sides, bot);
+			delete[] type;
 		}
 		break;
 	default:
