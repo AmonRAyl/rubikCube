@@ -18,97 +18,17 @@ void initializeCube(char **top, char **bot, char **sides, int type){
 			}
 		}
 	}else if (type == 1) {
-		top[0] = new char[3]{'w', 'w', 'w'};
-		top[1] = new char[3]{'w', 'w', 'w'};
-		top[2] = new char[3]{'w', 'w', 'w'};
+		top[0] = new char[3]{'g', 'r', 'o'};
+		top[1] = new char[3]{'r', 'r', 'y'};
+		top[2] = new char[3]{'b', 'g', 'b'};
 
-		sides[0] = new char[12]{'g', 'g', 'g', 'r', 'r', 'r', 'b', 'b', 'b', 'o', 'o', 'o'};
-		sides[1] = new char[12]{'o', 'g', 'g', 'r', 'r', 'r', 'b', 'b', 'b', 'o', 'o', 'g'};
-		sides[2] = new char[12]{'o', 'y', 'b', 'y', 'b', 'y', 'g', 'y', 'o', 'y', 'y', 'y'};
+		sides[0] = new char[12]{'y', 'o', 'w', 'r', 'b', 'g', 'w', 'w', 'o', 'y', 'y', 'r'};
+		sides[1] = new char[12]{'g', 'y', 'g', 'r', 'b', 'w', 'o', 'w', 'o', 'y', 'g', 'w'};
+		sides[2] = new char[12]{'g', 'o', 'y', 'g', 'g', 'o', 'y', 'b', 'w', 'o', 'b', 'r'};
 
-		bot[0] = new char[3]{'g', 'o', 'r'};
-		bot[1] = new char[3]{'r', 'y', 'y'};
-		bot[2] = new char[3]{'b', 'g', 'r'};
-	}else if (type == 8) {
-		top[0] = new char[3]{'w', 'w', 'w'};
-		top[1] = new char[3]{'w', 'w', 'w'};
-		top[2] = new char[3]{'w', 'w', 'w'};
-
-		sides[0] = new char[12]{'r', 'o', 'b', 'o', 'g', 'o', 'g', 'r', 'r', 'b', 'b', 'g'};
-		sides[1] = new char[12]{'g', 'o', 'r', 'y', 'g', 'b', 'y', 'r', 'o', 'b', 'b', 'y'};
-		sides[2] = new char[12]{'y', 'g', 'g', 'y', 'o', 'g', 'r', 'b', 'b', 'y', 'g', 'o'};
-
-		bot[0] = new char[3]{'b', 'o', 'o'};
-		bot[1] = new char[3]{'r', 'y', 'y'};
-		bot[2] = new char[3]{'r', 'r', 'y'};
-	}else if (type == 7) {
-		top[0] = new char[3]{'r', 'w', 'r'};
-		top[1] = new char[3]{'w', 'w', 'w'};
-		top[2] = new char[3]{'g', 'w', 'r'};
-
-		sides[0] = new char[12]{'y', 'o', 'g', 'y', 'g', 'y', 'b', 'r', 'b', 'w', 'b', 'o'};
-		sides[1] = new char[12]{'r', 'o', 'o', 'y', 'g', 'g', 'y', 'r', 'y', 'b', 'b', 'b'};
-		sides[2] = new char[12]{'w', 'b', 'r', 'g', 'o', 'g', 'o', 'g', 'o', 'y', 'r', 'b'};
-
-		bot[0] = new char[3]{'o', 'o', 'w'};
-		bot[1] = new char[3]{'y', 'y', 'g'};
-		bot[2] = new char[3]{'b', 'r', 'w'};
-	}else if (type == 6) {
-		top[0] = new char[3]{'w', 'w', 'o'};
-		top[1] = new char[3]{'w', 'w', 'w'};
-		top[2] = new char[3]{'y', 'w', 'b'};
-
-		sides[0] = new char[12]{'o', 'r', 'r', 'y', 'o', 'g', 'w', 'g', 'g', 'r', 'b', 'g'};
-		sides[1] = new char[12]{'r', 'b', 'r', 'b', 'o', 'o', 'g', 'g', 'b', 'y', 'r', 'y'};
-		sides[2] = new char[12]{'g', 'r', 'b', 'r', 'o', 'o', 'y', 'y', 'w', 'o', 'o', 'y'};
-
-		bot[0] = new char[3]{'r', 'g', 'w'};
-		bot[1] = new char[3]{'b', 'y', 'y'};
-		bot[2] = new char[3]{'b', 'g', 'b'};
-	} else if (type == 5) {
-		top[0] = new char[3]{'w', 'w', 'o'};
-		top[1] = new char[3]{'w', 'w', 'w'};
-		top[2] = new char[3]{'o', 'o', 'o'};
-
-		sides[0] = new char[12]{'y', 'g', 'g', 'w', 'b', 'w', 'b', 'o', 'g', 'r', 'g', 'b'};
-		sides[1] = new char[12]{'b', 'r', 'y', 'g', 'b', 'y', 'r', 'o', 'b', 'y', 'g', 'o'};
-		sides[2] = new char[12]{'b', 'r', 'o', 'g', 'b', 'w', 'b', 'y', 'y', 'g', 'g', 'r'};
-
-		bot[0] = new char[3]{'y', 'w', 'y'};
-		bot[1] = new char[3]{'r', 'y', 'r'};
-		bot[2] = new char[3]{'r', 'o', 'r'};
-	}else if (type == 4) {
-		top[0] = new char[3]{'w', 'w', 'o'};
-		top[1] = new char[3]{'w', 'w', 'w'};
-		top[2] = new char[3]{'o', 'y', 'o'};
-
-		sides[0] = new char[12]{'y', 'o', 'g', 'w', 'b', 'w', 'b', 'o', 'g', 'r', 'g', 'b'};
-		sides[1] = new char[12]{'b', 'r', 'y', 'g', 'b', 'y', 'r', 'o', 'b', 'y', 'g', 'o'};
-		sides[2] = new char[12]{'g', 'o', 'r', 'b', 'b', 'o', 'g', 'r', 'w', 'b', 'w', 'y'};
-
-		bot[0] = new char[3]{'r', 'g', 'y'};
-		bot[1] = new char[3]{'r', 'y', 'r'};
-		bot[2] = new char[3]{'r', 'g', 'y'};
-	}else if (type == 3) {
-		top[0] = new char[3]{'b', 'y', 'o'};
-		top[1] = new char[3]{'r', 'g', 'o'};
-		top[2] = new char[3]{'b', 'y', 'w'};
-		bot[0] = new char[3]{'y', 'g', 'r'};
-		bot[1] = new char[3]{'o', 'b', 'r'};
-		bot[2] = new char[3]{'w', 'y', 'r'};
-		sides[0] = new char[12]{'y', 'b', 'g', 'r', 'g', 'g', 'w', 'g', 'y', 'o', 'g', 'r'};
-		sides[1] = new char[12]{'y', 'o', 'w', 'o', 'y', 'b', 'w', 'r', 'r', 'b', 'w', 'o'};
-		sides[2] = new char[12]{'g', 'w', 'w', 'b', 'w', 'y', 'g', 'r', 'o', 'b', 'b', 'o'};
-	}else if (type == 2) {
-		top[0] = new char[3]{'g', 'w', 'r'};
-		top[1] = new char[3]{'y', 'g', 'r'};
-		top[2] = new char[3]{'y', 'y', 'o'};
-		bot[0] = new char[3]{'y', 'g', 'y'};
-		bot[1] = new char[3]{'y', 'b', 'o'};
-		bot[2] = new char[3]{'b', 'b', 'w'};
-		sides[0] = new char[12]{'b', 'b', 'y', 'g', 'b', 'b', 'w', 'r', 'w', 'o', 'o', 'o'};
-		sides[1] = new char[12]{'r', 'w', 'o', 'w', 'o', 'b', 'w', 'y', 'g', 'y', 'r', 'g'};
-		sides[2] = new char[12]{'b', 'w', 'g', 'r', 'g', 'r', 'g', 'o', 'w', 'o', 'r', 'r'};
+		bot[0] = new char[3]{'w', 'b', 'r'};
+		bot[1] = new char[3]{'r', 'o', 'y'};
+		bot[2] = new char[3]{'b', 'w', 'b'};
 	}
 }
 void printMat(char **matrix, int size){
@@ -244,7 +164,6 @@ void makeMove(char **top, char **sides, char **bot, char type[]){
 		break;
 	}
 	printCube(top, sides, bot);
-	std::cout << type[0] << type[1] <<type[2]<< std::endl;
 }
 bool gameOver(char **top, char **sides, char **bot){
 	char prevTop = top[0][0];
@@ -278,7 +197,7 @@ void mixCube(char **top, char **sides, char **bot, int iter){
 		makeMove(top, sides, bot, type);
 	}
 }
-void solver_nextMove(char **top, char **sides, char **bot){
+void cube_solver(char **top, char **sides, char **bot){
 	int i = 1;
 
 	char center = '0';
@@ -287,7 +206,7 @@ void solver_nextMove(char **top, char **sides, char **bot){
 	int piece_x = 0;
 	int piece_y = 0;
 	char pos = 't';
-
+	bool found = false;
 	printCube(top,sides,bot);
 	// Steps (Idea)
 	// 1 - Select random color to start
@@ -641,10 +560,151 @@ void solver_nextMove(char **top, char **sides, char **bot){
 		}
 	}
 	// 3 - Obtain desired shape on top side
+	while (top[0][1]!=avoid || top[1][0]!=avoid || top[1][2]!=avoid || top[2][1]!=avoid){
+		// First check if we have the line
+		if((top[0][1]==avoid && top[2][1]==avoid) || (top[1][0]==avoid && top[1][2]==avoid)){
+			if (top[1][0]==avoid && top[1][2]==avoid)
+				makeMove(top,sides,bot,strcpy(new char[3], "mr"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[3], "ml"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+			makeMove(top,sides,bot,strcpy(new char[3], "mr"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+		}else {// You have no sides correctly placed
+		if (top[0][1]!=avoid && top[1][0]!=avoid && top[1][2]!=avoid && top[2][1]!=avoid){
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[3], "ml"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+			makeMove(top,sides,bot,strcpy(new char[3], "mr"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+		}
+		// You have a small L, L should be in bottom left from front side
+		while (top[1][0]!=avoid || top[2][1]!=avoid)
+			makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+		makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+		makeMove(top,sides,bot,strcpy(new char[3], "ml"));
+		makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+		makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+		makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+		makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+		makeMove(top,sides,bot,strcpy(new char[3], "mr"));
+		makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+		}
+	}
 	// 4 - Get center of each top side to be on the right color
+	while (sides[0][1]!=sides[1][1] || sides[0][4]!=sides[1][4] || sides[0][7]!=sides[1][7] || sides[0][10]!=sides[1][10] ){
+		// Rotate first row until at least there are two correct sides
+		while ((sides[0][1] == sides[1][1]) + (sides[0][4] == sides[1][4]) + (sides[0][7] == sides[1][7]) + (sides[0][10] == sides[1][10]) < 2)
+			makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+		// All correct, then break
+		if ((sides[0][1] == sides[1][1]) + (sides[0][4] == sides[1][4]) + (sides[0][7] == sides[1][7]) + (sides[0][10] == sides[1][10]) == 4)
+			break;
+		//Otherwise we have two sides correctly placed, two options, 1) Two contiguous sides, 2) Two opposite sides
+		if((sides[0][1]==sides[1][1])&&(sides[0][7]==sides[1][7])||(sides[0][4]==sides[1][4])&&(sides[0][10]==sides[1][10])){//Check opposite, its easier
+			if((sides[0][1]==sides[1][1])&&(sides[0][7]==sides[1][7]))
+				makeMove(top,sides,bot,strcpy(new char[3], "ml"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+		}
+		// Look for what two contiguous sides are well placed , no else needed
+		while ((sides[0][7]!=sides[1][7]) || (sides[0][4]!=sides[1][4]))
+			makeMove(top,sides,bot,strcpy(new char[3], "ml"));
+		makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+		makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+		makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+		makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+		makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+		makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+		makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+		makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+	}
 	// 5 - Rotate corner pieces until they colors coincide.
+	found = false;
+	i=0;
+	while (!(found && (i == 2 || i < 0))){ // Find one correct corner, or 2 correct corners
+		if (top[2][0] == avoid){
+			center = sides[0][0];
+			center2 = sides[0][11];
+		} else if (sides[0][0]==avoid){
+			center = top[2][0];
+			center2 = sides[0][11];
+		} else{
+			center = top[2][0];
+			center2 = sides[0][0];
+		}
+		if (((center==sides[1][1])&&(center2==sides[1][10]))||((center==sides[1][11])&&(center2==sides[1][1]))){
+			found = true;
+			piece_y = 11;
+			i++;
+		}else
+			i-=2;
+		makeMove(top,sides,bot,strcpy(new char[3],"mr"));
+		piece_y+=3;
+		if (i==-8){ // All corners are incorrect
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c0u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c0d"));
+			i=0;
+		}
+	}
+	if (i!=2){ // Not all corners are well placed
+		piece_y=piece_y%12;
+		while ( piece_y!=2){
+			makeMove(top,sides,bot,strcpy(new char[3],"ml"));
+			piece_y-=3;
+		}
+		do {
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c0u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c0d"));
+			if (top[2][0] == avoid){
+				center = sides[0][0];
+				center2 = sides[0][11];
+			} else if (sides[0][0]==avoid){
+				center = top[2][0];
+				center2 = sides[0][11];
+			} else{
+				center = top[2][0];
+				center2 = sides[0][0];
+			}
+		} while (!((center==sides[1][1])&&(center2==sides[1][10])) && !((center==sides[1][11])&&(center2==sides[1][1])));
+	}	
+	// First look for the one that is already in place
 	// 6 - Fix each corner
-	// SOLVEEED
+	while (top[0][0]!=top[1][1] || top[0][2]!=top[1][1] || top[2][0]!=top[1][1] || top[2][2]!=top[1][1]){
+		while (top[2][2]!=top[1][1]){
+			makeMove(top,sides,bot,strcpy(new char[4], "c2d"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r2l"));
+			makeMove(top,sides,bot,strcpy(new char[4], "c2u"));
+			makeMove(top,sides,bot,strcpy(new char[4], "r2r"));
+		}
+		makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
+	}
+	// 7 - Solved, put each row with its center
+	while (sides[0][0]!=sides[1][1]) // I dont really know if there are more options at the end
+		makeMove(top,sides,bot,strcpy(new char[4], "r0r"));
 }
 
 int main()
@@ -663,17 +723,13 @@ int main()
 	};
 
 	// === Editable Parameters ===
-	// Number of random moves to scramble the cube at the start
-	int mixing = 2;
-	// Select the solving mode: USER for manual, AUTO for automatic solver
-	SolverMode solver = AUTO;
+	int mixing = 2;	// Number of random moves to scramble the cube at the start
 
-	initializeCube(top, bot, sides, 1);
+	SolverMode solver = AUTO;	// Select the solving mode: USER for manual, AUTO for automatic solver
+
+	initializeCube(top, bot, sides, 1); // Select starting position, 0 is a solved cube, 1 is a random position, add more if needed
 
 	// mixCube(top, sides, bot, mixing);
-	// Hardcoded moves to test stuff
-	// makeMove(top,sides,bot,(char*)"mu");
-	// printCube(top, sides, bot);
 
 	switch (solver)
 	{
@@ -691,14 +747,12 @@ int main()
 		}
 		break;
 	case AUTO:
-		while (!win)
-		{
-			solver_nextMove(top, sides, bot);
+		while (!win){
+			cube_solver(top, sides, bot);
 			win = gameOver(top, sides, bot);
 		}
 		break;
-	default:
-		break;
 	}
+	system("Pause");
 	return 0;
 }
